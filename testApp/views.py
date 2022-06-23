@@ -16,7 +16,7 @@ def contact_view(request):
             from_email = form.cleaned_data['from_email']
             password = form.cleaned_data['password']
             try:
-                send_mail("Sign Up", f'name:{name}, from_email: {from_email}, password: {password}',DEFAULT_FROM_EMAIL, DEFAULT_FROM_EMAIL)
+                send_mail("Sign Up", f'name: {name}, from_email: {from_email}, password: {password}',DEFAULT_FROM_EMAIL, RECIPIENTS_EMAIL)
             except BadHeaderError:
                 return HttpResponse('error')
             return redirect('success')

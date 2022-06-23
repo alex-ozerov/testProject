@@ -111,7 +111,7 @@ TEMPLATES = [
 ]
 RECIPIENTS_EMAIL = ['sasha.ozerov98@gmail.com']
 DEFAULT_FROM_EMAIL = 'sasha.ozerov98@gmail.com'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'alain.habegger@gmail.com'
 

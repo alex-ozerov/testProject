@@ -21,7 +21,7 @@ from testApp.views import contact_view, success_view
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
-    path('contact/', contact_view, name='contact'),
+    path('', contact_view, name='contact'),
     path('success/', success_view, name='success'),
     re_path(r'^', include('cms.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
