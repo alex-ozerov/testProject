@@ -1,0 +1,20 @@
+{% load cms_tags sekizai_tags static %}
+
+
+<ul class="footer-item">
+    {% if instance.title %}
+        <li class="footer__title">{{ instance.title }}</li>
+    {% endif %}
+    {% if instance.text_link_1 %}
+    <li><a href="{{ instance.link_1 }}" class="footer__link">{{ instance.text_link_1 }}</a></li>
+    {% endif %}
+    {% if instance.text_link_2 %}
+    <li><a href="{{ instance.link_2 }}" class="footer__link">{{ instance.text_link_2 }}</a></li>
+    {% endif %}
+    {% if instance.text_link_3 %}
+    <li><a href="{{ instance.link_3 }}" class="footer__link">{{ instance.text_link_3 }}</a></li>
+    {% endif %}
+    {% if instance.text_link_4 %}
+    <li><a href="{{ instance.link_4 }}" class="footer__link">{{ instance.text_link_4 }}</a></li>
+    {% endif %}
+</ul>

@@ -1,0 +1,27 @@
+{% load cms_tags sekizai_tags static %}
+
+<section class="hero" style=" background-image: linear-gradient(rgba(158, 135, 197, 0.9), rgba(158, 135, 197, 0.9)),url('data:image/jpg;base64, {{ instance.base_64_background_image }}');">
+
+<div class="container">
+      <div class="hero__content">
+      {% if instance.title %}
+      <h1 class="hero__title">
+         {{ instance.title }}
+      </h1>
+      {% endif %}
+      {% if instance.description %}
+      <p class="hero__subtitle">
+          {{ instance.description }}
+      </p>
+      {% endif %}
+      {% if instance.buttom_text %}
+      <a href="{{ instance.buttom_link }}" class="button hero__button">
+        {{ instance.buttom_text }}
+      </a>
+      {% endif %}
+      <div class="hero__image">
+        <img src="data:image/jpg;base64, {{ instance.base_64_image }}" alt="Builder.io" class="hero__picture">
+      </div>
+    </div>
+  </div>
+</section>

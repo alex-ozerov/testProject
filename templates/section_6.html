@@ -1,0 +1,82 @@
+{% load cms_tags sekizai_tags static %}
+
+
+{% if instance.check_box %}
+    <div class="product">
+{% else %}
+    <div class="product active">
+{% endif %}
+        <div class="product__group">
+        {% if instance.title %}
+            <h3 class="product__type">{{ instance.title }}</h3>
+        {% endif %}
+        {% if instance.description %}
+            <div class="product__description">{{ instance.description }}</div>
+        {% endif %}
+        {% if instance.price %}
+            {% if instance.check_box %}
+                <div class="product__price">{{ instance.price }}</div>
+            {% else %}
+                <div class="product__price">{{ instance.price }}<span class="product__price-time">  /Yearly</span></div>
+            {% endif %}
+        {% endif %}
+        <ul class="product__items">
+            {% if instance.list_line_1 %}
+            <li class="product__item">{{ instance.list_line_1 }}</li>
+            {% endif %}
+            {% if instance.list_line_2 %}
+            <li class="product__item">{{ instance.list_line_2 }}</li>
+            {% endif %}
+            {% if instance.list_line_3 %}
+            <li class="product__item">{{ instance.list_line_3 }}</li>
+            {% endif %}
+            {% if instance.list_line_4 %}
+            <li class="product__item">{{ instance.list_line_4 }}</li>
+            {% endif %}
+            {% if instance.list_line_5 %}
+            <li class="product__item">{{ instance.list_line_5 }}</li>
+            {% endif %}
+            {% if instance.list_line_6 %}
+            <li class="product__item">{{ instance.list_line_6 }}</li>
+            {% endif %}
+        </ul>
+    </div>
+    {% if instance.text_link %}
+        {% if instance.check_box %}
+            <a href="{{ instance.link }}" class="button button__transparent product__link">{{ instance.text_link }} ✔</a>
+        {% else %}
+            <a href="{{ instance.link }}" class="button button__fill product__link">{{ instance.text_link }} ✔</a>
+        {% endif %}
+    {% endif %}
+
+    {% if instance.users_text %}
+        <div class="product__users">
+        Join <span class="product__users-count">{{ instance.users_text }}</span> users
+    </div>
+    {% endif %}
+</div>
+<div class="feature-products__popup popup">
+    <div class="popup__close">X</div>
+
+    <form class="feature-products__form" method="post">
+        {% csrf_token %}
+
+        <label for="feature-name">
+            name
+            {{form.name}}
+            <input id="feature-name" type="text">
+        </label>
+        <label for="feature-email">
+            email
+            {{ form.from_email }}
+            <input id="feature-email" type="email">
+        </label>
+        <label for="feature-password">
+            password
+            {{ form.password }}
+            <input id="feature-password" type="password">
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+

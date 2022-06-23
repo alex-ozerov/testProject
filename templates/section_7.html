@@ -1,0 +1,22 @@
+{% load cms_tags sekizai_tags static %}
+
+
+<section class="full-image">
+        <img class="full-image__big-screen" src="data:image/jpg;base64, {{ instance.base_64_background_image }}"></div>
+        <div class="full-image__block"></div>
+        <div class="full-image__paralax-image" style="background-image: url('data:image/jpg;base64, {{ instance.base_64_image }}');">
+
+        </div>
+
+
+    </section>
+{% if instance.buttom_text %}
+<section class="money">
+        <div class="container">
+
+                <div class="money__button-group">
+                        <a href="{{ instance.buttom_link }}" class="button button__fill money__button hero__button">{{ instance.buttom_text }}</a>
+                </div>
+        </div>
+</section>
+{% endif %}

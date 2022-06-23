@@ -1,0 +1,15 @@
+{% load cms_tags sekizai_tags static %}
+
+
+    <div class="benefit-item">
+        <img src="data:image/jpg;base64, {{ instance.base_64_image }}" alt="{{ instance.title }}" class="benefit-item__icon">
+        {% if instance.title %}
+            <h3 class="benefit-item__title">{{ instance.title }}</h3>
+        {% endif %}
+        {% if instance.description %}
+            <p class="benefit-item__description">{{ instance.description }}</p>
+        {% endif %}
+        {% if instance.text_link %}
+            <a href="{{ instance.link }}" class="benefit-item__link">{{ instance.text_link }}</a>
+        {% endif %}
+    </div>

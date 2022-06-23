@@ -1,0 +1,23 @@
+{% load cms_tags sekizai_tags static %}
+
+<section class="richtext">
+        <div class="container">
+            <div class="richtext__button-group">
+                {% if instance.buttom_text_1 %}
+               <a href="{{ instance.buttom_link_1}}" class="button button__fill richtext__button">{{ instance.buttom_text_1}}</a>
+                {% endif %}
+                {% if instance.buttom_text_2 %}
+               <a href="{{ instance.buttom_link_2}}" class="button button__transparent richtext__button">{{ instance.buttom_text_2}}</a>
+                {% endif %}
+            </div>
+            <div class="richtext__content">
+                {% if instance.title %}
+                <h2 class="richtext__title">{{ instance.title}}</h2>
+                {% endif %}
+                {% if instance.description %}
+                <p class="richtext__subtitle">{{ instance.description}}</p>
+                {% endif %}
+            </div>
+        </div>
+
+</section>

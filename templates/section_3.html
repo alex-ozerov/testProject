@@ -1,0 +1,35 @@
+{% load cms_tags sekizai_tags static %}
+
+<section class="half-text">
+        <div class="container">
+            <div class="half-text__block">
+                <div class="half-text__content">
+                    <div class="half-text__text-item">
+                      {% if instance.title_1 %}
+                        <h3 class="half-text__title">{{ instance.title_1}}</h3>
+                      {% endif %}
+                      {% if instance.description_1 %}
+                        <p class="half-text__subtitle">{{ instance.description_1}}</p>
+                      {% endif %}
+                      {% if instance.buttom_text %}
+                        <a href="{{ instance.buttom_link }}" class="button button__fill">
+                            {{ instance.buttom_text}}
+                        </a>
+                      {% endif %}
+                    </div>
+                    <div class="half-text__text-item">
+                      {% if instance.title_2 %}
+                        <h3 class="half-text__title">{{ instance.title_2}}</h3>
+                      {% endif %}
+                      {% if instance.description_2 %}
+                        <p class="half-text__subtitle">{{ instance.description_2}}</p>
+                      {% endif %}
+                    </div>
+                </div>
+
+                <div class="half-text__image">
+                    <img src="data:image/jpg;base64, {{ instance.base_64_image }}" alt="Create account" class="half-text__picture">
+                </div>
+            </div>
+        </div>
+</section>
