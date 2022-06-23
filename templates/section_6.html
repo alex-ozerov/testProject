@@ -57,8 +57,9 @@
 </div>
 <div class="feature-products__popup popup">
     <div class="popup__close">X</div>
-
+    <h3>Enter:</h3>
     <form class="feature-products__form" method="POST">
+
         {% csrf_token %}
         {{ form.as_p }}
 
