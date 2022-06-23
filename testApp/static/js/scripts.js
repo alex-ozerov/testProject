@@ -20,14 +20,14 @@ $(function() {
 
 
     $( ".product__link" ).click(function() {
-                    $('.background-overlay').addClass('active');
-                    $('.feature-products__popup').addClass('active');
-                    return false
-                });
-                $( ".popup__close" ).click(function() {
-                    $('.background-overlay').removeClass('active');
-                    $('.feature-products__popup').removeClass('active');
-                    return false
-                });
+        $('.background-overlay').addClass('active');
+        $('.feature-products__popup').addClass('active');
+        return false
+    });
+    $( ".popup__close" ).click(function() {
+        $('.background-overlay').removeClass('active');
+        $('.feature-products__popup').removeClass('active');
+        return false
+    });
 
 });
