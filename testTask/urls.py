@@ -14,16 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import re_path, path, include
+from django.urls import re_path, include,path
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import contact_view, success_view
-
+from testApp.views import contact_view, success_view
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
-    re_path(r'^', include('cms.urls')),
     path('contact/', contact_view, name='contact'),
     path('success/', success_view, name='success'),
-
+    re_path(r'^', include('cms.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
